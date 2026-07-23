@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  backend:
+    build: .
+    container_name: legalmind_api
+    command: uvicorn src.api:app --host 0.0.0.0 --port 8000
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - ./chroma_db:/app/chroma_db
+      - ./data:/app/data
+    restart: always
+
+  frontend:
+    build: .
+    container_name: legalmind_ui
+    command: python src/ui.py
+    ports:
+      - "7860:7860"
+    environment:
+      - API_URL=http://backend:8000/api/v1/consultar
+    depends_on:
+      - backend
+    restart: always

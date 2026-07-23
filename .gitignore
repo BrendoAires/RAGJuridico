@@ -1,9 +1,13 @@
-# Ambientes Virtuais
 venv/
 .venv/
 env/
 .env
 chroma_db/
+*.chromadb
 __pycache__/
 *.pyc
-.pytest_cache/
+*.pyo
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
