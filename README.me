@@ -27,7 +27,7 @@ O LegalMind Analytics foi desenvolvido para resolver o desafio de consulta e ext
 
 ## Arquitetura do Sistema
 
-'''mermaid
+```mermaid
 flowchart TD
     subgraph Ingestão
         A[Documentos PDF /data] --> B[PyPDFDirectoryLoader]
@@ -47,4 +47,4 @@ flowchart TD
     subgraph Frontend
         L[Gradio UI] -->|HTTP Request| F
     end
-'''
+```
