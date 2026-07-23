@@ -1,20 +1,22 @@
-# ⚖️ LegalMind Analytics — LegalTech RAG System
+# LegalMind Analytics — LegalTech RAG System
 
 > Sistema RAG (*Retrieval-Augmented Generation*) de alta precisão para análise e auditoria de documentos jurídicos processuais, construído com arquitetura modular e padrões de nível de produção.
 
-![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python)
-![FastAPI](https://img.shields.io/badge/FastAPI-0.100%2B-009688?logo=fastapi)
-![LangChain](https://img.shields.io/badge/LangChain-LCEL-1C3C3C?logo=langchain)
-![ChromaDB](https://img.shields.io/badge/Vector_DB-Chroma-red)
-![Gradio](https://img.shields.io/badge/Frontend-Gradio-orange)
+<p align="left">
+  <img src="https://shields.io" alt="Python">
+  <img src="https://shields.io" alt="FastAPI">
+  <img src="https://shields.io" alt="LangChain">
+  <img src="https://shields.io" alt="ChromaDB">
+  <img src="https://shields.io" alt="Gradio">
+</p>
 
 ---
 
-## 📌 Visão Geral
+## 📋 Visão Geral
 
 O **LegalMind Analytics** foi desenvolvido para resolver o desafio de consulta e extração rápida de dados em grandes volumes de documentos processuais (PDFs). A solução utiliza embeddings do Google Gemini e busca vetorial com ChromaDB para fornecer respostas precisas e auditáveis com citação direta dos documentos fontes e sem alucinações.
 
-### 🌟 Destaques da Arquitetura
+### 🚀 Destaques da Arquitetura
 * **Inviolabilidade das Fontes**: Prompt padronizado para respostas baseadas exclusivamente no contexto extraído.
 * **Composição com LCEL**: Pipeline encadeada com LangChain Expression Language, eliminando abstrações obsoletas.
 * **Vector Store Atualizada**: Integração com a nova biblioteca `langchain-chroma`.
@@ -38,10 +40,11 @@ flowchart TD
         F[Usuário / Client] -->|POST /api/v1/consultar| G[FastAPI Router]
         G --> H[ChromaDB Retriever]
         H -->|Busca Semântica| I[Contexto de Relevância]
-        I --> J[LCEL Chain + Gemini 3.5 Flash]
+        I --> J[LCEL Chain + Gemini 3.6 Flash]
         J --> K[Resposta JSON + Fontes Auditáveis]
     end
 
     subgraph Frontend
         L[Gradio UI] -->|HTTP Request| F
     end
+```
