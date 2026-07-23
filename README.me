@@ -1,6 +1,6 @@
 # LegalMind Analytics — LegalTech RAG System
 
-> Sistema RAG (*Retrieval-Augmented Generation*) de alta precisão para análise e auditoria de documentos jurídicos processuais, construído com arquitetura modular e padrões de nível de produção.
+> Sistema RAG (Retrieval-Augmented Generation) de alta precisão para análise e auditoria de documentos jurídicos processuais, construído com arquitetura modular e padrões de nível de produção.
 
 <p align="left">
   <img src="https://shields.io" alt="Python">
@@ -12,20 +12,20 @@
 
 ---
 
-## 📋 Visão Geral
+## Visão Geral
 
-O **LegalMind Analytics** foi desenvolvido para resolver o desafio de consulta e extração rápida de dados em grandes volumes de documentos processuais (PDFs). A solução utiliza embeddings do Google Gemini e busca vetorial com ChromaDB para fornecer respostas precisas e auditáveis com citação direta dos documentos fontes e sem alucinações.
+O LegalMind Analytics foi desenvolvido para resolver o desafio de consulta e extração rápida de dados em grandes volumes de documentos processuais (PDFs). A solução utiliza embeddings do Google Gemini e busca vetorial com ChromaDB para fornecer respostas precisas e auditáveis com citação direta dos documentos fontes e sem alucinações.
 
-### 🚀 Destaques da Arquitetura
-* **Inviolabilidade das Fontes**: Prompt padronizado para respostas baseadas exclusivamente no contexto extraído.
-* **Composição com LCEL**: Pipeline encadeada com LangChain Expression Language, eliminando abstrações obsoletas.
-* **Vector Store Atualizada**: Integração com a nova biblioteca `langchain-chroma`.
-* **Microsserviço RESTful**: Backend construído em FastAPI com validação de entrada/saída via Pydantic.
-* **Interface Amigável**: Dashboard interativo em Gradio para consulta em tempo real.
+### Destaques da Arquitetura
+* Inviolabilidade das Fontes: Prompt padronizado para respostas baseadas exclusivamente no contexto extraído.
+* Composição com LCEL: Pipeline encadeada com LangChain Expression Language, eliminando abstrações obsoletas.
+* Vector Store Atualizada: Integração com a nova biblioteca langchain-chroma.
+* Microsserviço RESTful: Backend construído em FastAPI com validação de entrada/saída via Pydantic.
+* Interface Amigável: Dashboard interativo em Gradio para consulta em tempo real.
 
 ---
 
-## 🏗️ Arquitetura do Sistema
+## Arquitetura do Sistema
 
 ```mermaid
 flowchart TD
