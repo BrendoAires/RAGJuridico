@@ -2,15 +2,6 @@
 
 > Sistema RAG (Retrieval-Augmented Generation) de alta precisão para análise e auditoria de documentos jurídicos processuais, construído com arquitetura modular e padrões de nível de produção.
 
-<p align="left">
-  <img src="https://shields.io" alt="Python">
-  <img src="https://shields.io" alt="FastAPI">
-  <img src="https://shields.io" alt="LangChain">
-  <img src="https://shields.io" alt="ChromaDB">
-  <img src="https://shields.io" alt="Gradio">
-</p>
-
----
 
 ## Visão Geral
 
@@ -22,29 +13,3 @@ O LegalMind Analytics foi desenvolvido para resolver o desafio de consulta e ext
 * Vector Store Atualizada: Integração com a nova biblioteca langchain-chroma.
 * Microsserviço RESTful: Backend construído em FastAPI com validação de entrada/saída via Pydantic.
 * Interface Amigável: Dashboard interativo em Gradio para consulta em tempo real.
-
----
-
-## Arquitetura do Sistema
-
-```mermaid
-flowchart TD
-    subgraph Ingestão
-        A[Documentos PDF /data] --> B[PyPDFDirectoryLoader]
-        B --> C[RecursiveCharacterTextSplitter]
-        C --> D[GoogleGenerativeAIEmbeddings]
-        D --> E[(ChromaDB /chroma_db)]
-    end
-
-    subgraph Backend FastAPI
-        F[Usuário / Client] -->|POST /api/v1/consultar| G[FastAPI Router]
-        G --> H[ChromaDB Retriever]
-        H -->|Busca Semântica| I[Contexto de Relevância]
-        I --> J[LCEL Chain + Gemini 1.5 Flash]
-        J --> K[Resposta JSON + Fontes Auditáveis]
-    end
-
-    subgraph Frontend
-        L[Gradio UI] -->|HTTP Request| F
-    end
-```
