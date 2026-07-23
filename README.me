@@ -40,7 +40,7 @@ flowchart TD
         F[Usuário / Client] -->|POST /api/v1/consultar| G[FastAPI Router]
         G --> H[ChromaDB Retriever]
         H -->|Busca Semântica| I[Contexto de Relevância]
-        I --> J[LCEL Chain + Gemini 3.6 Flash]
+        I --> J[LCEL Chain + Gemini 1.5 Flash]
         J --> K[Resposta JSON + Fontes Auditáveis]
     end
 
